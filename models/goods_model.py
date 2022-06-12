@@ -28,15 +28,15 @@ stored_list =[
 	]
 
 def get_inputs_initial_list(today: str) -> dict:
-	for i in range(10):
-		init_dicts = {
-			'Date': today,
-			'Accessories-Name': st.text_input('Accessories-Name'),
-			'Accessories-Quantity': st.number_input('Accessories-Quantity'),
-			'Accessories-Category': st.text_input('Accessories-Category'),
-			'Accessories-Brand': st.text_input('Accessories-Brand'),
-			'buying_price_per_unit': st.number_input('Price_per_unit')
-		}
+	
+	init_dicts = {
+		'Date': today,
+		'Accessories-Name': st.text_input('Accessories-Name'),
+		'Accessories-Quantity': st.number_input('Accessories-Quantity'),
+		'Accessories-Category': st.text_input('Accessories-Category'),
+		'Accessories-Brand': st.text_input('Accessories-Brand'),
+		'buying_price_per_unit': st.number_input('Price_per_unit')
+	}
 	return init_dicts
 
 def get_selling_list(today: str)->dict:

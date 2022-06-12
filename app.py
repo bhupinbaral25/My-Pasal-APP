@@ -4,17 +4,21 @@ import numpy as np
 import datetime
 import time
 
-from models import get_inputs_initial_list, get_selling_list
+from dashboard import MultiPage
+from dashboard import initial_upload, goods_sell
 
 a_date = datetime.datetime.now()
 days = datetime.timedelta(12)
 a_date = str(a_date).split(' ')[0]
 
-if st.button('INITIAL SETUP'):
-	while(True):
-		
-		data = get_inputs_initial_list(a_date)
-		if st.button('Submit'):
-			print(data)
-			break
+app = MultiPage()
 
+st.title("My Pasal Application")
+
+# Add all your applications (pages) here
+app.add_page("Upload Initial Items", initial_upload.app)
+app.add_page("Sell", goods_sell.app)
+
+
+# The main app
+app.run()
